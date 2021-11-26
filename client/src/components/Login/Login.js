@@ -60,14 +60,31 @@ class Login extends Component {
               {this.state.error}
             </h3>
           }
-          <label>User dsf Name</label>
-          <input type="text" data-test="username" value={this.state.username} onChange={this.handleUserChange} />
 
+          <h3>Log in</h3>
+
+          <div className="form-group">
+          <label>Nombre De Usuario</label>
+          <input type="text" className="form-control" placeholder="Nombre De Usuario" data-test="username" value={this.state.username} onChange={this.handleUserChange} />
+          </div>
+    
+
+          <div className="form-group">
           <label>Password</label>
-          <input type="password" data-test="password" value={this.state.password} onChange={this.handlePassChange} />
+          <input type="password" className="form-control" placeholder="Password"  data-test="password" value={this.state.password} onChange={this.handlePassChange} />
+          </div>
 
-          <input type="submit" value="Log In" data-test="submit" />
+          <div className="form-group">
+                    <div className="custom-control custom-checkbox">
+                        <input type="checkbox" className="custom-control-input" id="customCheck1" />
+                        <label className="custom-control-label" htmlFor="customCheck1">Recuerdame</label>
+                    </div>
+          </div>
+          <button type="submit" className="btn btn-dark btn-lg btn-block">Sign in</button>
         </form>
+
+
+
       </div>
     );
  } 

@@ -52,7 +52,7 @@ class Signup extends Component {
 
     return (
       <div className="Login">
-          <h1>Registrate</h1>
+          
         <form onSubmit={this.handleSubmit}>
           {
             this.state.error &&
@@ -61,14 +61,20 @@ class Signup extends Component {
               {this.state.error}
             </h3>
           }
-        
-          <label>New User Name</label>
-          <input type="text" data-test="username" value={this.state.username} onChange={this.handleUserChange} />
+           <h3>Registrate</h3>
 
+          <div className="form-group">
+          <label>Nombre De Usuario</label>
+          <input type="text" data-test="username" className="form-control" placeholder="Nombre De Usuario" value={this.state.username} onChange={this.handleUserChange} />
+          </div>
+
+         
+          <div className="form-group">
           <label>Password</label>
-          <input type="password" data-test="password" value={this.state.password} onChange={this.handlePassChange} />
+          <input type="password" data-test="password" className="form-control" placeholder="Password" value={this.state.password} onChange={this.handlePassChange} />
+          </div>
 
-          <input type="submit" value="Log In" data-test="submit" />
+          <input type="submit" className="btn btn-dark btn-lg btn-block" value="Log In" data-test="submit" />
         </form>
       </div>
     );
