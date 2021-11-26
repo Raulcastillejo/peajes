@@ -4,11 +4,12 @@ import React, { Component } from 'react';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-
-import Login from "./components/Login/Login";
-import Admin from './components/Admin/Admin';
-import Signup from './components/Signup/Signup';
+//componentes
 import NavBar from './components/NavBar/NavBar';
+import Login from "./components/Login/Login";
+import Signup from './components/Signup/Signup';
+import Admin from './components/Admin/Admin';
+import Home from './components/Home/Home';
 
 
 class App extends Component {
@@ -70,6 +71,15 @@ class App extends Component {
         <div className="inner">
         
           <Admin/>
+         
+        
+        </div>
+      </div>
+
+      <div className="outer">
+        <div className="inner-2">
+        
+          <Home/>
          
         
         </div>
