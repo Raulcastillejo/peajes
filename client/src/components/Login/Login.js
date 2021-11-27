@@ -24,11 +24,11 @@ class Login extends Component {
     evt.preventDefault();
 
     if (!this.state.username) {
-      return this.setState({ error: 'Username is required' });
+      return this.setState({ error: 'Email Requerido' });
     }
 
     if (!this.state.password) {
-      return this.setState({ error: 'Password is required' });
+      return this.setState({ error: 'Se Requiere El Password ' });
     }
 
     return this.setState({ error: '' });
@@ -61,6 +61,7 @@ class Login extends Component {
             </h3>
           }
 
+      <div className="col-lg-10 col-m-7 mx-auto">
           <h3>Log in</h3>
 
           <div className="form-group">
@@ -81,7 +82,12 @@ class Login extends Component {
                     </div>
           </div>
           <button type="submit" className="btn btn-dark btn-lg btn-block">Sign in</button>
+          </div>
         </form>
+
+    
+
+
 
 
 

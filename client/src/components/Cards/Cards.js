@@ -1,39 +1,33 @@
-import React, { Component } from 'react';
-import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
-import CardGroup from 'react-bootstrap/CardGroup'
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import logo from './logo.svg';
+import React, { Component } from "react";
+import './Cards.css';
+import Card from "react-bootstrap/Card";
 
+import logo from "./logo.svg";
 
-class Home extends Component {
-  render() {
-    return (
-     <div>
-   
-      <div>
-                <Row xs={1} md={2} className="g-4">
-            {Array.from({ length: 4 }).map((_, idx) => (
-                <Col>
-                <Card>
-                    <Card.Img variant="top" src={logo} />
-                    <Card.Body>
-                    <Card.Title>Card title</Card.Title>
-                    <Card.Text>
-                        This is a longer card with supporting text below as a natural
-                        lead-in to additional content. This content is a little bit longer.
-                    </Card.Text>
-                    </Card.Body>
-                </Card>
-                </Col>
-            ))}
-            </Row>
-      </div>
-    
-    </div> 
-    );
+class Cards extends Component {
+  state = { users: [] };
+  componentDidMount() {
+    fetch("/users")
+      .then((res) => res.json())
+      .then((users) => this.setState({ users }));
   }
+
+  render() {
+    const renderCard = (user, index) => {
+      return (
+        <Card style={{ width: "18rem" }} key={index} className="box">
+          <Card.Img variant="top" src="holder.js/100px180" src={logo} />
+          <Card.Body>
+            <Card.Title>{user.id}</Card.Title>
+            <Card.Text>{user.username}</Card.Text>
+          </Card.Body>
+        </Card>
+      );
+    };
+ 
+    return <div className="grid">{this.state.users.map(renderCard)}</div>;
+  }
+  
 }
 
-export default Home;
+export default Cards;

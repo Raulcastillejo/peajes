@@ -61,6 +61,7 @@ class Signup extends Component {
               {this.state.error}
             </h3>
           }
+          <div className="col-lg-10 col-m-7 mx-auto">
            <h3>Registrate</h3>
 
           <div className="form-group">
@@ -75,6 +76,7 @@ class Signup extends Component {
           </div>
 
           <input type="submit" className="btn btn-dark btn-lg btn-block" value="Log In" data-test="submit" />
+          </div>
         </form>
       </div>
     );
