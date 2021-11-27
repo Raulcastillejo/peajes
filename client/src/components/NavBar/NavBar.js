@@ -1,35 +1,48 @@
 import React, { Component } from 'react';
+import Navbar from 'react-bootstrap/Navbar';
+import {  Container, NavDropdown, Nav, Dropdown } from "react-bootstrap";
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
+import FormControl from 'react-bootstrap/FormControl'
+;
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 
 class NavBar extends Component {
   render() {
     return (
-            
-            <nav className="navbar navbar-expand-lg navbar-light fixed-top">
-            <div className="container">
-                <Link className="navbar-brand" to={"/sign-in"}>Inicio</Link>
-                <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
-                <ul className="navbar-nav ml-auto">
-                    <li className="nav-item">
-                    <Link className="nav-link" to={"/sign-in"}>Sign in</Link>
-                    </li>
-                    <li className="nav-item">
-                    <Link className="nav-link" to={"/Register"}>Registrarse</Link>
-                    </li>
-                    <li className="nav-item">
-                    <Link className="nav-link" to={"/register"}>Admin</Link>
-                    </li>
-                    <li className="nav-item">
-                    <Link className="nav-link" to={"/register"}>Peajes</Link>
-                    </li>
-                    <li className="nav-item">
-                    <Link className="nav-link" to={"/register"}>Cobros</Link>
-                    </li>
-                </ul>
-                </div>
-            </div>
-            </nav>
+          
+            <Navbar bg="light" expand="lg" className=" fixed-top">
+            <Container fluid>
+              <Navbar.Brand href="#">Navbar scroll</Navbar.Brand>
+              <Navbar.Toggle aria-controls="navbarScroll" />
+              <Navbar.Collapse id="navbarScroll">
+                <Nav
+                  className="me-auto my-2 my-lg-0"
+                  style={{ maxHeight: '100px' }}
+                  navbarScroll
+                >
+                  <Nav.Link href="#action1">Home</Nav.Link>
+                  <Nav.Link href="#action2">Link</Nav.Link>
+                  <Nav.Link href="#" disabled>
+                    Link
+                  </Nav.Link>
+                </Nav>
+                <Form className="d-flex">
+                  <FormControl
+                    type="search"
+                    placeholder="Search"
+                    className="me-2"
+                    aria-label="Search"
+                  />
+                  <Button variant="outline-success">Search</Button>
+                </Form>
+              </Navbar.Collapse>
+            </Container>
+          </Navbar>
+
+
+
 
             );
   }
