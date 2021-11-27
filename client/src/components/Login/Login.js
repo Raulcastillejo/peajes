@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Form from 'react-bootstrap/Form';
 import './Login.css';
 
 class Login extends Component {
@@ -52,7 +53,7 @@ class Login extends Component {
 
     return (
       <div className="Login">
-        <form onSubmit={this.handleSubmit}>
+        <Form onSubmit={this.handleSubmit}>
           {
             this.state.error &&
             <h3 data-test="error" onClick={this.dismissError}>
@@ -83,7 +84,7 @@ class Login extends Component {
           </div>
           <button type="submit" className="btn btn-dark btn-lg btn-block">Sign in</button>
           </div>
-        </form>
+        </Form>
 
     
 
