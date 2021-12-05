@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 import './Signup.css';
 
 class Signup extends Component {
   constructor() {
     super();
     this.state = {
-      username: '',
+      email: '',
       password: '',
       error: '',
     };
@@ -23,12 +25,12 @@ class Signup extends Component {
   handleSubmit(evt) {
     evt.preventDefault();
 
-    if (!this.state.username) {
-      return this.setState({ error: 'Username is required' });
+    if (!this.state.email) {
+      return this.setState({ error: 'Email Requerido' });
     }
 
     if (!this.state.password) {
-      return this.setState({ error: 'Password is required' });
+      return this.setState({ error: 'Se Requiere El Password ' });
     }
 
     return this.setState({ error: '' });
@@ -36,7 +38,7 @@ class Signup extends Component {
 
   handleUserChange(evt) {
     this.setState({
-      username: evt.target.value,
+      email: evt.target.value,
     });
   };
 
@@ -52,8 +54,7 @@ class Signup extends Component {
 
     return (
       <div className="Login">
-          
-        <form onSubmit={this.handleSubmit}>
+        <Form onSubmit={this.handleSubmit}>
           {
             this.state.error &&
             <h3 data-test="error" onClick={this.dismissError}>
@@ -61,23 +62,52 @@ class Signup extends Component {
               {this.state.error}
             </h3>
           }
-          <div className="col-lg-10 col-m-7 mx-auto">
-           <h3>Registrate</h3>
+{/* 
+      <div className="col-lg-10 col-m-7 mx-auto">
+          <h3>Log in</h3>
 
           <div className="form-group">
           <label>Nombre De Usuario</label>
-          <input type="text" data-test="username" className="form-control" placeholder="Nombre De Usuario" value={this.state.username} onChange={this.handleUserChange} />
+          <input type="text" className="form-control" placeholder="Nombre De Usuario" data-test="username" value={this.state.username} onChange={this.handleUserChange} />
           </div>
+    
 
-         
           <div className="form-group">
           <label>Password</label>
-          <input type="password" data-test="password" className="form-control" placeholder="Password" value={this.state.password} onChange={this.handlePassChange} />
+          <input type="password" className="form-control" placeholder="Password"  data-test="password" value={this.state.password} onChange={this.handlePassChange} />
           </div>
 
-          <input type="submit" className="btn btn-dark btn-lg btn-block" value="Log In" data-test="submit" />
+          <div className="form-group">
+                    <div className="custom-control custom-checkbox">
+                        <input type="checkbox" className="custom-control-input" id="customCheck1" />
+                        <label className="custom-control-label" htmlFor="customCheck1">Recuerdame</label>
+                    </div>
           </div>
-        </form>
+          <button type="submit" className="btn btn-dark btn-lg btn-block">Sign in</button>
+          </div>
+        </Form> */}
+
+
+
+  <Form.Group className="mb-3" controlId="formBasicEmail">
+    <Form.Label>Email address</Form.Label>
+    <Form.Control type="email" placeholder="Email"  data-test="email" value={this.state.email} onChange={this.handleUserChange}/>
+   
+  </Form.Group>
+
+  <Form.Group className="mb-3" controlId="formBasicPassword">
+    <Form.Label>Password</Form.Label>
+    <Form.Control type="password" className="form-control" placeholder="Password"  data-test="password" value={this.state.password} onChange={this.handlePassChange} />
+  </Form.Group>
+  <Form.Group className="mb-3" controlId="formBasicCheckbox">
+    <Form.Check type="checkbox" label="Check me out" />
+  </Form.Group>
+  <Button variant="primary" type="submit">
+    Submit
+  </Button>
+</Form>
+    
+
       </div>
     );
  } 

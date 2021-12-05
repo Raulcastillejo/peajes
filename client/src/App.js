@@ -3,13 +3,15 @@ import logo from "./logo.svg";
 import React, { Component } from "react";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Switch, Route, Link } from "react-router-dom";
 //componentes
 import NavBar from "./components/NavBar/NavBar";
 import Login from "./components/Login/Login";
 import Signup from "./components/Signup/Signup";
 import Admin from "./components/Admin/Admin";
 import Home from "./components/Home/Home";
+import CrearConsorcio from './components/Consorcios/crearConsorcio';
+import CrearPeajes from "./components/peajes/crearPeajes";
 
 class App extends Component {
   state = { users: [] };
@@ -69,6 +71,21 @@ class App extends Component {
               <Home />
             </div>
           </div>
+
+          <div className="outer">
+            <div className="inner-2">
+              <CrearConsorcio />
+            </div>
+           </div>
+
+            <div className="outer">
+            <div className="inner-2">
+              <CrearPeajes />
+            </div>
+          </div>
+
+
+         
         </div>
       </div>
     );

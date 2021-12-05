@@ -4,10 +4,52 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+let mongoose = require('mongoose');
+let cors = require('cors');
+let bodyParser = require('body-parser');
+let dbConfig = require('./database/db');
+
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
+
+
+// Express Route
+const userRoute = require('../api/routes/users')
+
+// Connecting mongoDB Database
+mongoose.Promise = global.Promise;
+mongoose.connect(dbConfig.db, {
+  useNewUrlParser: true
+}).then(() => {
+  console.log('Database sucessfully connected!')
+},
+  error => {
+    console.log('Could not connect to database : ' + error)
+  }
+)
+
+
+
 var app = express();
+
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
+app.use(cors());
+//app.use('/', studentRoute)
+
+
+// PORT
+const port = process.env.PORT || 4000;
+const server = app.listen(port, () => {
+  console.log('Connected to port ' + port)
+})
+
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

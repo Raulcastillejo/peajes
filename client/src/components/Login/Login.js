@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 import './Login.css';
 
 class Login extends Component {
   constructor() {
     super();
     this.state = {
-      username: '',
+      email: '',
       password: '',
       error: '',
     };
@@ -24,7 +25,7 @@ class Login extends Component {
   handleSubmit(evt) {
     evt.preventDefault();
 
-    if (!this.state.username) {
+    if (!this.state.email) {
       return this.setState({ error: 'Email Requerido' });
     }
 
@@ -37,7 +38,7 @@ class Login extends Component {
 
   handleUserChange(evt) {
     this.setState({
-      username: evt.target.value,
+      email: evt.target.value,
     });
   };
 
@@ -61,7 +62,7 @@ class Login extends Component {
               {this.state.error}
             </h3>
           }
-
+{/* 
       <div className="col-lg-10 col-m-7 mx-auto">
           <h3>Log in</h3>
 
@@ -84,8 +85,27 @@ class Login extends Component {
           </div>
           <button type="submit" className="btn btn-dark btn-lg btn-block">Sign in</button>
           </div>
-        </Form>
+        </Form> */}
 
+
+
+  <Form.Group className="mb-3" controlId="formBasicEmail">
+    <Form.Label>Email address</Form.Label>
+    <Form.Control type="email" placeholder="Email"  data-test="email" value={this.state.email} onChange={this.handleUserChange}/>
+   
+  </Form.Group>
+
+  <Form.Group className="mb-3" controlId="formBasicPassword">
+    <Form.Label>Password</Form.Label>
+    <Form.Control type="password" className="form-control" placeholder="Password"  data-test="password" value={this.state.password} onChange={this.handlePassChange} />
+  </Form.Group>
+  <Form.Group className="mb-3" controlId="formBasicCheckbox">
+    <Form.Check type="checkbox" label="Check me out" />
+  </Form.Group>
+  <Button variant="primary" type="submit">
+    Submit
+  </Button>
+</Form>
     
 
 
