@@ -32,7 +32,7 @@ module.exports = router;
 // let studentSchema = require('../models/users');
 
 // // crear usuario
-// router.route('/login').post((req, res, next) => {
+// router.route('/register').post((req, res, next) => {
 //   studentSchema.create(req.body, (error, data) => {
 //     if (error) {
 //       return next(error)

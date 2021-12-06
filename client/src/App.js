@@ -10,8 +10,10 @@ import Login from "./components/Login/Login";
 import Signup from "./components/Signup/Signup";
 import Admin from "./components/Admin/Admin";
 import Home from "./components/Home/Home";
-import CrearConsorcio from './components/Consorcios/crearConsorcio';
+import CrearConsorcio from "./components/Consorcios/crearConsorcio";
 import CrearPeajes from "./components/peajes/crearPeajes";
+import PagoPeajes from "./components/pagos/pagoPeaje";
+import RecargarTarjeta from "./components/recarga/recargarTarjeta";
 
 class App extends Component {
   state = { users: [] };
@@ -76,16 +78,27 @@ class App extends Component {
             <div className="inner-2">
               <CrearConsorcio />
             </div>
-           </div>
+          </div>
 
-            <div className="outer">
+          <div className="outer">
             <div className="inner-2">
               <CrearPeajes />
             </div>
           </div>
 
+          <div className="outer">
+            <div className="inner-2">
+              <PagoPeajes />
+            </div>
+          </div>
 
-         
+          
+          <div className="outer">
+            <div className="inner-2">
+              <RecargarTarjeta />
+            </div>
+          </div>
+
         </div>
       </div>
     );

@@ -1,26 +1,19 @@
-import React, { Component } from 'react';
-import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
-import './Home.css';
-import Cards from '../Cards/Cards';
-
+import React, { Component } from "react";
+import Card from "react-bootstrap/Card";
+import Button from "react-bootstrap/Button";
+import "./Home.css";
+import Cards from "../Cards/Cards";
 
 class Home extends Component {
   render() {
     return (
-     <div>
-    
       <div>
-        Home
-        
-       
-      </div>
+        <div>Home</div>
 
-      <div>
-        <Cards/>
+        <div>
+          <Cards />
+        </div>
       </div>
-    
-    </div> 
     );
   }
 }

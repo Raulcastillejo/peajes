@@ -25,6 +25,8 @@ class Signup extends Component {
   handleSubmit(evt) {
     evt.preventDefault();
 
+   
+
     if (!this.state.email) {
       return this.setState({ error: 'Email Requerido' });
     }
@@ -33,8 +35,40 @@ class Signup extends Component {
       return this.setState({ error: 'Se Requiere El Password ' });
     }
 
+    console.log (this.state.email);
+    console.log ("*****************");
+    console.log(this.state.password);
+/************************************************* */
+let databody = {
+  "email": this.state.email,
+  "password": this.state.password
+}
+
+    console.log ("*****************");
+    console.log(databody);
+
+fetch('http://localhost:27017/register', {
+
+     method: 'POST',
+     body: JSON.stringify(databody),
+     headers: {
+        'Content-Type': 'application/json'
+     },
+  })
+  .then(res => res.json())
+  .then(data => console.log(data));
+/*************************************** */
+
+
+
+
+
     return this.setState({ error: '' });
+
+    
   }
+
+  
 
   handleUserChange(evt) {
     this.setState({
@@ -62,6 +96,12 @@ class Signup extends Component {
               {this.state.error}
             </h3>
           }
+
+<div>
+        register
+        
+       
+      </div>
 {/* 
       <div className="col-lg-10 col-m-7 mx-auto">
           <h3>Log in</h3>

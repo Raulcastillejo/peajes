@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import './Cards.css';
+import "./Cards.css";
 import Card from "react-bootstrap/Card";
-
 
 import logo from "./logo.svg";
 
@@ -25,10 +24,9 @@ class Cards extends Component {
         </Card>
       );
     };
- 
+
     return <div className="grid">{this.state.users.map(renderCard)}</div>;
   }
-  
 }
 
 export default Cards;
