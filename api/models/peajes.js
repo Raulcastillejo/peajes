@@ -10,7 +10,25 @@ let peajesSchema = new Schema({
   },
   latitud: {
     type: String
-  }
+  },
+  categoriaI: {
+    type: String
+  },
+  categoriaII: {
+    type: String
+  },
+  categoriaIII: {
+    type: String
+  },
+  categoriaVI: {
+    type: String
+  },
+  categoriaV: {
+    type: String
+  },
+  consorcio: {
+    type: String
+  },
 }, {
     collection: 'peajes'
   })
