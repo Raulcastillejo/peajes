@@ -14,6 +14,7 @@ import CrearConsorcio from "./components/Consorcios/crearConsorcio";
 import CrearPeajes from "./components/peajes/crearPeajes";
 import PagoPeajes from "./components/pagos/pagoPeaje";
 import RecargarTarjeta from "./components/recarga/recargarTarjeta";
+import Consulta from "./components/consulta/consultas";
 
 class App extends Component {
   state = { users: [] };
@@ -96,6 +97,12 @@ class App extends Component {
           <div className="outer">
             <div className="inner-2">
               <RecargarTarjeta />
+            </div>
+          </div>
+
+          <div className="outer">
+            <div className="inner-2">
+              <Consulta />
             </div>
           </div>
 

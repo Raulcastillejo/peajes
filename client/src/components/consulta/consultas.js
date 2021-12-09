@@ -1,19 +1,19 @@
 import React, { Component } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import "./crearConsorcio.css";
+import "./consultas.css";
 
-class CrearConsorcio extends Component {
+class Consulta extends Component {
   constructor() {
     super();
     this.state = {
-      nombre: "",
-      descripcion: "",
+      desde: "",
+      hasta: "",
       error: "",
     };
 
-    this.handlePassChange = this.handlePassChange.bind(this);
-    this.handleUserChange = this.handleUserChange.bind(this);
+    this.handleDesdeChange = this.handleDesdeChange.bind(this);
+    this.handleHastaChange = this.handleHastaChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.dismissError = this.dismissError.bind(this);
   }
@@ -25,30 +25,30 @@ class CrearConsorcio extends Component {
   handleSubmit(evt) {
     evt.preventDefault();
 
-    if (!this.state.nombre) {
+    if (!this.state.desde) {
       return this.setState({ error: "Nombre Requerido" });
     }
 
-    if (!this.state.descripcion) {
+    if (!this.state.hasta) {
       return this.setState({ error: "Se Requiere La Descripcion" });
     }
     
     console.log (this.state.nombre);
     console.log ("*****************");
-    console.log (this.state.descripcion);
+    console.log (this.state.hasta);
 
     return this.setState({ error: "" });
   }
 
-  handleUserChange(evt) {
+  handleDesdeChange(evt) {
     this.setState({
-      nombre: evt.target.value,
+      desde: evt.target.value,
     });
   }
 
-  handlePassChange(evt) {
+  handleHastaChange(evt) {
     this.setState({
-      descripcion: evt.target.value,
+      hasta: evt.target.value,
     });
   }
 
@@ -66,15 +66,15 @@ class CrearConsorcio extends Component {
             </h3>
           )}
 
-          <div>Crear Consorcio</div>
+          <div>Consulta</div>
 
           <Form.Group className="mb-3" controlId="formBasicnombre">
-            <Form.Label>Nombre</Form.Label>
+            <Form.Label>desde</Form.Label>
             <Form.Control
               type="text"
-              placeholder="Nombre"
-              data-test="nombre"
-              value={this.state.nombre}
+              placeholder="desde"
+              data-test="desde"
+              value={this.state.desde}
               onChange={this.handleUserChange}
             />
           </Form.Group>
@@ -84,15 +84,15 @@ class CrearConsorcio extends Component {
             <Form.Control
               type="text"
               className="form-control"
-              placeholder="Descripcion"
-              data-test="descripcion"
-              value={this.state.descripcion}
+              placeholder="hasta"
+              data-test="hasta"
+              value={this.state.hasta}
               onChange={this.handlePassChange}
             />
           </Form.Group>
 
           <Button variant="primary" type="submit">
-            Guardar
+            Enviar
           </Button>
         </Form>
       </div>
@@ -100,4 +100,4 @@ class CrearConsorcio extends Component {
   }
 }
 
-export default CrearConsorcio;
+export default Consulta;
