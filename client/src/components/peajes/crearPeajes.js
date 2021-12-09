@@ -67,17 +67,17 @@ class CrearPeajes extends Component {
       });
     }
 
-    if (!this.state.CategoriaIV) {
-      return this.setState({
-        error: "Se Requierre El Valor De La  Categoria VI",
-      });
-    }
+    // if (!this.state.CategoriaIV) {
+    //   return this.setState({
+    //     error: "Se Requierre El Valor De La  Categoria VI",
+    //   });
+    // }
 
-    if (!this.state.CategoriaV) {
-      return this.setState({
-        error: "Se Requierre El Valor De La  Categoria V",
-      });
-    }
+    // if (!this.state.CategoriaV) {
+    //   return this.setState({
+    //     error: "Se Requierre El Valor De La  Categoria V",
+    //   });
+    // }
     console.log (this.state.nombre);
     console.log ("*****************");
     console.log (this.state.latitud);
@@ -93,6 +93,27 @@ class CrearPeajes extends Component {
     console.log(this.state.CategoriaIV);
     console.log ("*****************");
     console.log(this.state.CategoriaV);
+//ingresar a la base de datos
+    let databody = {
+      "nombre": this.state.nombre,
+      "longitud": this.state.longitud,
+      "latitud": this.state.latitud
+  }
+
+   fetch('/users', {
+      method: 'POST',
+      body: JSON.stringify(databody),
+      headers: {
+          'Content-Type': 'application/json'
+      },
+  })
+  .then(res => res.json())
+  .then(data => console.log(data)); 
+
+
+//*************** */
+
+
 
     return this.setState({ error: "" });
   }
@@ -231,7 +252,7 @@ class CrearPeajes extends Component {
               onChange={this.handleCategoriaIIIChange}
             />
           </Form.Group>
-
+{/* 
           <Form.Group className="mb-3" controlId="formBasicCategoriaVI">
             <Form.Label>Categoría VI</Form.Label>
             <Form.Control
@@ -242,8 +263,8 @@ class CrearPeajes extends Component {
               value={this.state.CategoriaIV}
               onChange={this.handleCategoriaVIChange}
             />
-          </Form.Group>
-
+          </Form.Group> */}
+{/* 
           <Form.Group className="mb-3" controlId="formBasicCategoriaV">
             <Form.Label>Categoría V</Form.Label>
             <Form.Control
@@ -254,7 +275,7 @@ class CrearPeajes extends Component {
               value={this.state.CategoriaV}
               onChange={this.handleCategoriaVChange}
             />
-          </Form.Group>
+          </Form.Group> */}
           <Button variant="primary" type="submit">
             Guardar
           </Button>
