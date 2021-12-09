@@ -1,28 +1,37 @@
 var express = require("express");
 var router = express.Router(); /* GET users listing. */
-router.get("/", function (req, res, next) {
-  // Comment out this line:
-  //res.send('respond with a resource');  // And insert something like this instead:
-  res.json([
-    {
-      id: 1,
-      username: "samsepi0l",
-    },
-    {
-      id: 2,
-      username: "D0loresH4ze",
-    },
-    {
-      id: 3,
-      username: "otro",
-    },
-    {
-      id: 4,
-      username: "FoFoMan",
-    },
-  ]);
-});
-module.exports = router;
+
+// Student Model
+let peajestSchema = require('../models/peajes');
+
+
+// router.get("/", function (req, res, next) {
+//   // Comment out this line:
+//   //res.send('respond with a resource');  // And insert something like this instead:
+//   res.json([
+//     {
+//       id: 1,
+//       username: "samsepi0l",
+//       otra: "otra",
+//     },
+//     {
+//       id: 2,
+//       username: "D0loresH4ze",
+//       otra: "otra",
+//     },
+//     {
+//       id: 3,
+//       username: "otro",
+//       otra: "otra",
+//     },
+//     {
+//       id: 4,
+//       username: "FoFoMan",
+//       otra: "otra",
+//     },
+//   ]);
+// });
+// module.exports = router;
 
 // let mongoose = require('mongoose'),
 //   express = require('express'),
@@ -43,16 +52,28 @@ module.exports = router;
 //   })
 // });
 
-// // leer usuarios
-// router.route('/').get((req, res) => {
-//   studentSchema.find((error, data) => {
-//     if (error) {
-//       return next(error)
-//     } else {
-//       res.json(data)
-//     }
-//   })
-// })
+// crear peaje
+router.route('/').post((req, res, next) => {
+  peajestSchema.create(req.body, (error, data) => {
+    if (error) {
+      return next(error)
+    } else {
+      console.log(data)
+      res.json(data)
+    }
+  })
+});
+
+// leer usuarios && leer peajes
+router.route('/').get((req, res) => {
+  peajestSchema.find((error, data) => {
+    if (error) {
+      return next(error)
+    } else {
+      res.json(data)
+    }
+  })
+})
 
 // // buscar un usuario
 // router.route('/edit-student/:id').get((req, res) => {
@@ -94,4 +115,4 @@ module.exports = router;
 //   })
 // })
 
-// module.exports = router;
+ module.exports = router;

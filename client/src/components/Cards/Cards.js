@@ -20,6 +20,7 @@ class Cards extends Component {
           <Card.Body>
             <Card.Title>{user.id}</Card.Title>
             <Card.Text>{user.username}</Card.Text>
+            <Card.Text>{user.otra}</Card.Text>
           </Card.Body>
         </Card>
       );

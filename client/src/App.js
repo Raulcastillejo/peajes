@@ -15,6 +15,7 @@ import CrearPeajes from "./components/peajes/crearPeajes";
 import PagoPeajes from "./components/pagos/pagoPeaje";
 import RecargarTarjeta from "./components/recarga/recargarTarjeta";
 import Consulta from "./components/consulta/consultas";
+import Peajes from "./components/peajes/mostrarPeajes";
 
 class App extends Component {
   state = { users: [] };
@@ -50,6 +51,12 @@ class App extends Component {
 
         <div className="App">
           <NavBar />
+
+          <div className="outer">
+            <div className="inner">
+              <Peajes />
+            </div>
+          </div>
 
           <div className="outer">
             <div className="inner">
