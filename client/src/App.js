@@ -17,6 +17,7 @@ import PagoPeajes from "./components/pagos/pagoPeaje";
 import RecargarTarjeta from "./components/recarga/recargarTarjeta";
 import Consulta from "./components/consulta/consultas";
 import Peajes from "./components/peajes/mostrarPeajes";
+import Consorcios from "./components/Consorcios/mostrarConsorcios";
 
 class App extends Component {
   state = { users: [] };
@@ -66,7 +67,7 @@ class App extends Component {
             <Route path="/consulta" element={<Consulta/>} />
             <Route path="/peajes" element={<Peajes />} />
             <Route path="/admin" element={<Admin />} />
-            <Route path="/home" element={<Home />} />
+            <Route path="/mostrarConsorcios" element={<Consorcios />} />
             
            
            

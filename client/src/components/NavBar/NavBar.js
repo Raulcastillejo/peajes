@@ -24,14 +24,14 @@ class NavBar extends Component {
                 >
                   <Nav.Link href="/">Home</Nav.Link>
                   <Nav.Link href="/registro">Registrar</Nav.Link>
-                  <Nav.Link href="/crearPeajes">crearPeajes</Nav.Link>
-                  <Nav.Link href="/crearConsorcio">crearConsorcio</Nav.Link>
-                  <Nav.Link href="/pagoPeajes">pagoPeajes</Nav.Link>
-                  <Nav.Link href="/recargarTarjeta">recargarTarjeta</Nav.Link>
+                  <Nav.Link href="/crearPeajes">crear Peajes</Nav.Link>
+                  <Nav.Link href="/crearConsorcio">crear Consorcio</Nav.Link>
+                  <Nav.Link href="/pagoPeajes">pagos</Nav.Link>
+                  <Nav.Link href="/recargarTarjeta">recargar Tarjeta</Nav.Link>
                   <Nav.Link href="/consulta">consulta</Nav.Link>
                   <Nav.Link href="/peajes">peajes</Nav.Link>
                   <Nav.Link href="/admin">admin</Nav.Link>
-                  <Nav.Link href="/home">Home</Nav.Link>
+                  <Nav.Link href="/mostrarConsorcios">Consorcios</Nav.Link>
                   
                   
                 </Nav>

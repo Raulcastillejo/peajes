@@ -61,32 +61,32 @@ let userSchema = require('../models/users');
 // });
 
 // crear peaje
-router.route('/').post((req, res, next) => {
-  peajesSchema.create(req.body, (error, data) => {
-    if (error) {
-      return next(error)
-    } else {
-      console.log(data)
-      res.json(data)
-    }
-  })
-});
+// router.route('/').post((req, res, next) => {
+//   peajesSchema.create(req.body, (error, data) => {
+//     if (error) {
+//       return next(error)
+//     } else {
+//       console.log(data)
+//       res.json(data)
+//     }
+//   })
+// });
+
+// // leer usuarios && leer peajes
+// router.route('/').get((req, res) => {
+//   peajesSchema.find((error, data) => {
+//     if (error) {
+//       return next(error)
+//     } else {
+//       res.json(data)
+//     }
+//   })
+// })
 
 // leer usuarios && leer peajes
 router.route('/').get((req, res) => {
-  peajesSchema.find((error, data) => {
-    if (error) {
-      return next(error)
-    } else {
-      res.json(data)
-    }
-  })
-})
-
-// leer usuarios && leer peajes
-router.route('/consorcios').get((req, res) => {
   consorcioSchema.find((error, data) => {
-    console.log("entro"); 
+    console.log("entro*************************"); 
     if (error) {
       return next(error)
     } else {

@@ -5,28 +5,27 @@ import Card from "react-bootstrap/Card";
 import logo from "./logo.svg";
 
 class Cards extends Component {
-  state = { users: [] };
+  state = { consorcios: [] };
   componentDidMount() {
-    fetch("/users")
+    fetch("/consorcios")
       .then((res) => res.json())
-      .then((users) => this.setState({ users }));
+      .then((consorcios) => this.setState({ consorcios }));
   }
 
   render() {
-    const renderCard = (user, index) => {
+    const renderCard = (consorcios, index) => {
       return (
         <Card style={{ width: "18rem" }} key={index} className="box">
-          <Card.Img variant="top" src="holder.js/100px180" src={logo} />
+          {/* <Card.Img variant="top" src="holder.js/100px180" src={logo} /> */}
           <Card.Body>
-            <Card.Title>{user.id}</Card.Title>
-            <Card.Text>{user.username}</Card.Text>
-            <Card.Text>{user.otra}</Card.Text>
+            <Card.Title>{consorcios.nombre}</Card.Title>
+            <Card.Text>{consorcios.descripcion}</Card.Text>
           </Card.Body>
         </Card>
       );
     };
 
-    return <div className="grid">{this.state.users.map(renderCard)}</div>;
+    return <div className="grid">{this.state.consorcios.map(renderCard)}</div>;
   }
 }
 

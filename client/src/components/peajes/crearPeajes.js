@@ -171,7 +171,7 @@ class CrearPeajes extends Component {
     // but you don't need to target those (any css-selector will work)
 
     return (
-      <div className="Login">
+      <div className="peajes">
         <Form onSubmit={this.handleSubmit}>
           {this.state.error && (
             <h3 data-test="error" onClick={this.dismissError}>

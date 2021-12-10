@@ -12,11 +12,13 @@ let dbConfig = require('./database/db');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var consorciosRouter = require('./routes/consorcios');
 
 
 
 // Express Route
-const userRoute = require('../api/routes/users')
+const userRoute = require('../api/routes/users');
+const consorciosRoute = require('../api/routes/consorcios');
 
 // Connecting mongoDB Database
 mongoose.Promise = global.Promise;
@@ -63,6 +65,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/consorcios', consorciosRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
