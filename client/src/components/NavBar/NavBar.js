@@ -14,7 +14,7 @@ class NavBar extends Component {
           
             <Navbar bg="light" expand="lg" className=" fixed-top">
             <Container fluid>
-              <Navbar.Brand href="#">Navbar scroll</Navbar.Brand>
+              <Navbar.Brand href="#">Navbar</Navbar.Brand>
               <Navbar.Toggle aria-controls="navbarScroll" />
               <Navbar.Collapse id="navbarScroll">
                 <Nav
@@ -22,11 +22,18 @@ class NavBar extends Component {
                   style={{ maxHeight: '100px' }}
                   navbarScroll
                 >
-                  <Nav.Link href="#action1">Home</Nav.Link>
-                  <Nav.Link href="#action2">Link</Nav.Link>
-                  <Nav.Link href="#" disabled>
-                    Link
-                  </Nav.Link>
+                  <Nav.Link href="/">Home</Nav.Link>
+                  <Nav.Link href="/registro">Registrar</Nav.Link>
+                  <Nav.Link href="/crearPeajes">crearPeajes</Nav.Link>
+                  <Nav.Link href="/crearConsorcio">crearConsorcio</Nav.Link>
+                  <Nav.Link href="/pagoPeajes">pagoPeajes</Nav.Link>
+                  <Nav.Link href="/recargarTarjeta">recargarTarjeta</Nav.Link>
+                  <Nav.Link href="/consulta">consulta</Nav.Link>
+                  <Nav.Link href="/peajes">peajes</Nav.Link>
+                  <Nav.Link href="/admin">admin</Nav.Link>
+                  <Nav.Link href="/home">Home</Nav.Link>
+                  
+                  
                 </Nav>
                 <Form className="d-flex">
                   <FormControl
@@ -35,7 +42,7 @@ class NavBar extends Component {
                     className="me-2"
                     aria-label="Search"
                   />
-                  <Button variant="outline-success">Search</Button>
+                  <Button variant="outline-success">Buscar</Button>
                 </Form>
               </Navbar.Collapse>
             </Container>

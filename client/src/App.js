@@ -29,7 +29,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
+        {/* <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
             Edit <code>src/App.js</code> and save to reload.
@@ -48,7 +48,7 @@ class App extends Component {
               <div key={user.id}>{user.username}</div>
             ))}
           </div>
-        </header>
+        </header> */}
 
         <div className="App">
           <NavBar />
@@ -57,7 +57,7 @@ class App extends Component {
           <BrowserRouter>
            <Routes>
           
-            <Route path="/login" element={<Login/>} />
+            <Route path="/" element={<Login/>} />
             <Route path="/registro" element={<Signup/>} />
             <Route path="/crearPeajes" element={<CrearPeajes/>} />
             <Route path="/crearConsorcio" element={<CrearConsorcio/>} />
