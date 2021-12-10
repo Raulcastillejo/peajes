@@ -3,7 +3,8 @@ import logo from "./logo.svg";
 import React, { Component } from "react";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import { BrowserRouter, Routes, Switch, Route, Link } from "react-router-dom";
+//import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter, Router, Route, Routes } from 'react-router-dom'
 //componentes
 import NavBar from "./components/NavBar/NavBar";
 import Login from "./components/Login/Login";
@@ -39,7 +40,7 @@ class App extends Component {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Learn React
+            Learn React xxxxx
           </a>
           <div className="App">
             <h1>Users</h1>
@@ -51,16 +52,33 @@ class App extends Component {
 
         <div className="App">
           <NavBar />
-
           <div className="outer">
             <div className="inner">
-              <Peajes />
-            </div>
+          <BrowserRouter>
+           <Routes>
+          
+            <Route path="/login" element={<Login/>} />
+            <Route path="/registro" element={<Signup/>} />
+            <Route path="/crearPeajes" element={<CrearPeajes/>} />
+            <Route path="/crearConsorcio" element={<CrearConsorcio/>} />
+            <Route path="/pagoPeajes" element={<PagoPeajes/>} />
+            <Route path="/recargarTarjeta" element={<RecargarTarjeta/>} />
+            <Route path="/consulta" element={<Consulta/>} />
+            <Route path="/peajes" element={<Peajes />} />
+            <Route path="/admin" element={<Admin />} />
+            <Route path="/home" element={<Home />} />
+            
+           
+           
+          
+          </Routes>
+          
+          </BrowserRouter>
           </div>
-
-          <div className="outer">
+          </div>
+          {/* <div className="outer">
             <div className="inner">
-              <Login />
+              
             </div>
           </div>
 
@@ -111,10 +129,10 @@ class App extends Component {
             <div className="inner-2">
               <Consulta />
             </div>
-          </div>
+          </div>*/}
 
         </div>
-      </div>
+      </div>  
     );
   }
 }

@@ -3,6 +3,7 @@ var router = express.Router(); /* GET users listing. */
 
 // Student Model
 let peajestSchema = require('../models/peajes');
+let userSchema = require('../models/users');
 
 
 // router.get("/", function (req, res, next) {
@@ -74,6 +75,18 @@ router.route('/').get((req, res) => {
     }
   })
 })
+
+// // leer usuarios && leer peajes
+// router.route('/').get((req, res) => {
+//   userSchema.find((error, data) => {
+//     if (error) {
+//       return next(error)
+//     } else {
+//       res.json(data)
+//     }
+//   })
+// })
+
 
 // // buscar un usuario
 // router.route('/edit-student/:id').get((req, res) => {

@@ -4,12 +4,28 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from "react-router-dom";
-import Login from './components/Login/Login';
+//componentes
+import NavBar from "./components/NavBar/NavBar";
+import Login from "./components/Login/Login";
+import Signup from "./components/Signup/Signup";
+import Admin from "./components/Admin/Admin";
+import Home from "./components/Home/Home";
+import CrearConsorcio from "./components/Consorcios/crearConsorcio";
+import CrearPeajes from "./components/peajes/crearPeajes";
+import PagoPeajes from "./components/pagos/pagoPeaje";
+import RecargarTarjeta from "./components/recarga/recargarTarjeta";
+import Consulta from "./components/consulta/consultas";
+import Peajes from "./components/peajes/mostrarPeajes";
+
 
 ReactDOM.render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>,
+ 
+    <App />,
+   
+      
+
+ 
+  
   document.getElementById('root')
 );
 

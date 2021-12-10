@@ -13,8 +13,10 @@ class Peajes extends Component {
   }
 
   render() {
+    <h1>Mostrar Peajes</h1>
     const renderCard = (peajes, index) => {
       return (
+        
         <Card style={{ width: "18rem" }} key={index} className="box">
           {/* <Card.Img variant="top" src="holder.js/100px180" src={logo} /> */}
           <Card.Body>
