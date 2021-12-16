@@ -93,6 +93,8 @@ class CrearPeajes extends Component {
     console.log(this.state.CategoriaIV);
     console.log ("*****************");
     console.log(this.state.CategoriaV);
+
+    
 //ingresar a la base de datos
     let databody = {
       "nombre": this.state.nombre,
@@ -100,7 +102,7 @@ class CrearPeajes extends Component {
       "latitud": this.state.latitud
   }
 
-   fetch('/users', {
+   fetch('/peajes', {
       method: 'POST',
       body: JSON.stringify(databody),
       headers: {
