@@ -32,6 +32,26 @@ class CrearConsorcio extends Component {
     if (!this.state.descripcion) {
       return this.setState({ error: "Se Requiere La Descripcion" });
     }
+
+    //ingresar a la base de datos
+    let databody = {
+      "nombre": this.state.nombre,
+      "descripcion": this.state.descripcion
+      
+  }
+
+   fetch('/consorcios', {
+      method: 'POST',
+      body: JSON.stringify(databody),
+      headers: {
+          'Content-Type': 'application/json'
+      },
+  })
+  .then(res => res.json())
+  .then(data => console.log(data)); 
+
+
+//*************** */
     
     console.log (this.state.nombre);
     console.log ("*****************");

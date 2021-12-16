@@ -2,7 +2,9 @@ var express = require("express");
 var router = express.Router(); /* GET users listing. */
 
 // Student Model
+let peajesSchema = require('../models/peajes');
 let consorcioSchema = require('../models/consorcios');
+let userSchema = require('../models/users');
 
 // router.use((req,res, next)=>{
 //   res.status(500).render("500", {
@@ -32,16 +34,16 @@ let consorcioSchema = require('../models/consorcios');
 // });
 
 // crear peaje
-router.route('/').post((req, res, next) => {
-  consorcioSchema.create(req.body, (error, data) => {
-    if (error) {
-      return next(error)
-    } else {
-      console.log(data)
-      res.json(data)
-    }
-  })
-});
+// router.route('/').post((req, res, next) => {
+//   peajesSchema.create(req.body, (error, data) => {
+//     if (error) {
+//       return next(error)
+//     } else {
+//       console.log(data)
+//       res.json(data)
+//     }
+//   })
+// });
 
 // // leer usuarios && leer peajes
 // router.route('/').get((req, res) => {

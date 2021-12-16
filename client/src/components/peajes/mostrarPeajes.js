@@ -7,7 +7,7 @@ import Card from "react-bootstrap/Card";
 class Peajes extends Component {
   state = { peajes: [] };
   componentDidMount() {
-    fetch("/users")
+    fetch("/peajes")
       .then((res) => res.json())
       .then((peajes) => this.setState({ peajes }));
   }
