@@ -2,6 +2,11 @@ import React, { Component } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import "./Login.css";
+//import { signin, signup } from '../../actions/auth';
+//import { useDispatch } from 'react-redux';
+
+const initialState = {email: "", password: ""};
+
 
 class Login extends Component {
   constructor() {
@@ -24,6 +29,7 @@ class Login extends Component {
 
   handleSubmit(evt) {
     evt.preventDefault();
+   
 
     if (!this.state.email) {
       return this.setState({ error: "Email Requerido" });
@@ -32,10 +38,29 @@ class Login extends Component {
     if (!this.state.password) {
       return this.setState({ error: "Se Requiere El Password " });
     }
+   
+    /************************************************* */
+let databody = {
+  "email": this.state.email,
+  "password": this.state.password
+  
+}
 
-    console.log (this.state.email);
     console.log ("*****************");
-    console.log(this.state.password);
+    console.log(databody);
+    console.log ("*****************");
+
+fetch('/signin', {
+
+     method: 'POST',
+     body: JSON.stringify(databody),
+     headers: {
+        'Content-Type': 'application/json'
+     },
+  })
+  .then(res => res.json())
+  .then(data => console.log(data));
+/*************************************** */
 
     return this.setState({ error: "" });
   }
@@ -99,6 +124,7 @@ class Login extends Component {
               data-test="email"
               value={this.state.email}
               onChange={this.handleUserChange}
+              name="email"
             />
           </Form.Group>
 
@@ -111,6 +137,7 @@ class Login extends Component {
               data-test="password"
               value={this.state.password}
               onChange={this.handlePassChange}
+              name="password"
             />
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicCheckbox">

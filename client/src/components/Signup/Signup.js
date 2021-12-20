@@ -41,13 +41,14 @@ class Signup extends Component {
 /************************************************* */
 let databody = {
   "email": this.state.email,
-  "password": this.state.password
+  "password": this.state.password,
+  "roll": "user"
 }
 
     console.log ("*****************");
     console.log(databody);
 
-fetch('http://localhost:27017/register', {
+fetch('/users', {
 
      method: 'POST',
      body: JSON.stringify(databody),

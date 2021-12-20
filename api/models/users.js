@@ -3,13 +3,13 @@ const Schema = mongoose.Schema;
 
 let usersSchema = new Schema({
   email: {
-    type: String
+    type: String , required: true
   },
   password: {
-    type: String
+    type: String , required: true
   },
   roll: {
-    type: String
+    type: String , required: true
   }
 }, {
     collection: 'users'
